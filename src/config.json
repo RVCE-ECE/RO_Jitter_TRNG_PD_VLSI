@@ -24,11 +24,10 @@
   "GRT_RESIZER_HOLD_SLACK_MARGIN": 0.05,
 
   "//": "RUN_LINTER, LINTER_INCLUDE_PDK_MODELS - Disabling the linter is not recommended!",
-  "//": "This design intentionally contains combinational loops (the ring",
-  "//": "oscillators), which the Verilator linter flags as fatal errors. The",
-  "//": "loops are deliberate and protected with (* keep *) attributes, so the",
-  "//": "linter is disabled here.",
-  "RUN_LINTER": 0,
+  "//": "Keep the linter ON: the TT flow does not abort on lint findings",
+  "//": "(Checker.LintErrors is already False), and the GDS action's summary",
+  "//": "step expects the verilator-lint.log to exist.",
+  "RUN_LINTER": 1,
   "LINTER_INCLUDE_PDK_MODELS": 1,
 
   "//": "The ring oscillators are deliberate combinational loops. Yosys' synth",
